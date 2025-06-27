@@ -4,6 +4,12 @@
 
 pcloud-sdk-php is a PHP SDK for accessing the [pCloud API](https://docs.pcloud.com/). It supports file, folder, sharing, public links, thumbnails, trash, archiving, transfer, collection, and account management operations.
 
+## EU or US API Endpoint
+
+pCloud provides both EU and US API endpoints.  
+- **EU:** `https://eapi.pcloud.com/`
+- **US:** `https://api.pcloud.com/`
+
 ## Installation
 
 Recommended via Composer:
@@ -19,8 +25,7 @@ Or simply include the `src/` directory in your project.
 ```php
 $access_token = 'YOUR_TOKEN';
 $client = new \GuzzleHttp\Client([
-    'base_uri' => "https://eapi.pcloud.com/",
-    "verify" => false, // Disable SSL verification for testing purposes
+    'base_uri' => "https://eapi.pcloud.com/", 
     'headers' => [
         'Authorization' => 'Bearer ' . $access_token,
     ],
