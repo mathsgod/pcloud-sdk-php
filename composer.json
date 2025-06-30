@@ -1,5 +1,12 @@
 {
     "name": "mathsgod/pcloud-sdk-php",
+    "description": "A PHP SDK for pCloud API",
+    "keywords": [
+        "pcloud",
+        "sdk",
+        "php",
+        "api"
+    ],
     "license": "MIT",
     "authors": [
         {
