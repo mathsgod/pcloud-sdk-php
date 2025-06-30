@@ -36,6 +36,122 @@ $api = new \pCloud\Sdk\Api($client);
 
 ---
 
+## Function List
+
+> For detailed parameters and return values, please refer to the source code comments.
+
+<details>
+<summary><strong>General</strong></summary>
+
+- userinfo()
+- supportedlanguages()
+- setlanguage(string $language)
+- currentserver()
+- diff(array $params = [])
+- getfilehistory(int $fileid)
+- getip()
+- getapiserver()
+</details>
+
+<details>
+<summary><strong>Auth</strong></summary>
+
+- sendverificationemail()
+- verifyemail(string $code)
+- changepassword(string $oldpassword, string $newpassword)
+- lostpassword(string $mail)
+- resetpassword(string $code, string $newpassword)
+- register(string $mail, string $password, string $termsaccepted, ?string $language = null, ?string $referer = null)
+- invite()
+- userinvites()
+- logout()
+- listtokens()
+- deletetoken(int $tokenid)
+- sendchangemail(?string $newmail = null, ?string $code = null)
+- changemail(string $password, string $code)
+- senddeactivatemail()
+- deactivateuser(string $password, string $code)
+</details>
+
+<details>
+<summary><strong>Collection</strong></summary>
+
+- collection_list(?int $type = null, bool $showfiles = false, ?int $pagesize = null)
+- collection_details(int $collectionid, ?int $page = null, ?int $pagesize = null)
+- collection_create(string $name, ?int $type = null, ?string $fileids = null)
+- collection_rename(int $collectionid, string $name)
+- collection_delete(int $collectionid)
+- collection_linkfiles(int $collectionid, string $fileids, bool $noitems = false)
+- collection_unlinkfiles(int $collectionid, ?string $positions = null, bool $all = false, ?string $fileids = null)
+- collection_move(int $collectionid, int $item, int $fileid, int $position)
+</details>
+
+<details>
+<summary><strong>PublicLinks</strong></summary>
+
+- getfilepublink(?int $fileid = null, ?string $path = null, ?string $expire = null, ?int $maxdownloads = null, ?int $maxtraffic = null, bool $shortlink = false, ?string $linkpassword = null)
+- getfolderpublink(?int $folderid = null, ?string $path = null, ?string $expire = null, ?int $maxdownloads = null, ?int $maxtraffic = null, bool $shortlink = false, ?string $linkpassword = null)
+- gettreepublink(string $name, ?string $fileids = null, ?string $folderids = null, ?int $folderid = null, ?string $expire = null, ?int $maxdownloads = null, ?int $maxtraffic = null, bool $shortlink = false, ?string $linkpassword = null)
+- showpublink(string $code)
+- getpublinkdownload(string $code, ?int $fileid = null, bool $forcedownload = false, ?string $contenttype = null, ?int $maxspeed = null, bool $skipfilename = false)
+- copypubfile(string $code, ?int $fileid = null, ?string $topath = null, ?int $tofolderid = null, ?string $toname = null, bool $noover = false)
+- listpublinks()
+- listplshort()
+- deletepublink(int $linkid)
+- changepublink(int $linkid, array $options)
+- getpubthumb(string $code, int $fileid, string $size, bool $crop = false, ?string $type = null)
+- getpubthumblink(string $code, int $fileid, string $size, bool $crop = false, ?string $type = null)
+- getpubthumbslinks(string $code, int $fileid, string $size, bool $crop = false, ?string $type = null)
+- savepubthumb(string $code, int $fileid, string $size, ?string $topath = null, ?int $tofolderid = null, ?string $toname = null, bool $crop = false, ?string $type = null, bool $noover = false)
+- getpubzip(string $code, bool $forcedownload = false, ?string $filename = null, ?string $timeoffset = null)
+- getpubziplink(string $code, bool $forcedownload = false, ?string $filename = null, ?string $timeoffset = null)
+- savepubzip(string $code, ?string $timeoffset = null, ?string $topath = null, ?int $tofolderid = null, ?string $toname = null)
+- getpubvideolinks(string $code, ?int $fileid = null, bool $forcedownload = false, ?string $contenttype = null, ?int $maxspeed = null, bool $skipfilename = false)
+- getpubaudiolink(string $code, ?int $fileid = null, bool $forcedownload = false, ?string $contenttype = null, ?int $abitrate = null)
+- getpubtextfile(string $code, ?int $fileid = null, ?string $fromencoding = null, ?string $toencoding = null, bool $forcedownload = false, ?string $contenttype = null)
+- getcollectionpublink(int $collectionid, ?string $expire = null, ?int $maxdownloads = null, ?int $maxtraffic = null, bool $shortlink = false)
+</details>
+
+<details>
+<summary><strong>Revisions</strong></summary>
+
+- listrevisions(?int $fileid = null, ?string $path = null)
+- revertrevision(?int $fileid = null, ?string $path = null, ?int $revisionid = null)
+</details>
+
+<details>
+<summary><strong>Thumbnails</strong></summary>
+
+- getthumblink(?int $fileid = null, ?string $path = null, ?string $size = null, bool $crop = false, ?string $type = null)
+- getthumbslinks(string $fileids, string $size, bool $crop = false, ?string $type = null)
+- getthumb(?int $fileid = null, ?string $path = null, ?string $size = null, bool $crop = false, ?string $type = null)
+- savethumb(?int $fileid = null, ?string $path = null, ?string $size = null, ?string $topath = null, ?int $tofolderid = null, ?string $toname = null, bool $crop = false, ?string $type = null, bool $noover = false)
+</details>
+
+<details>
+<summary><strong>Trash</strong></summary>
+
+- trash_list(int $folderid = 0, bool $nofiles = false, bool $recursive = false)
+- trash_restorepath(?int $fileid = null, ?int $folderid = null)
+- trash_restore(?int $fileid = null, ?int $folderid = null, ?int $restoreto = null, bool $metadata = false)
+- trash_clear(?int $fileid = null, ?int $folderid = null)
+</details>
+
+<details>
+<summary><strong>UploadLinks</strong></summary>
+
+- createuploadlink(?int $folderid = null, ?string $path = null, string $comment = '', ?string $expire = null, ?int $maxspace = null, ?int $maxfiles = null)
+- listuploadlinks()
+- deleteuploadlink(int $uploadlinkid)
+- changeuploadlink(int $uploadlinkid, array $options)
+- showuploadlink(int $uploadlinkid)
+- uploadtolink(string $code, array $files, bool $nopartial = false, ?string $progresshash = null)
+- uploadlinkprogress(string $code, string $progresshash)
+- copytolink(string $code, ?int $fileid = null, ?string $path = null, ?string $toname = null)
+</details>
+
+---
+
 ## Common Examples
 
 ### Upload a file
