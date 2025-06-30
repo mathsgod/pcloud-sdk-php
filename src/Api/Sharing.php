@@ -23,8 +23,8 @@ trait Sharing
     public function sharefolder(
         ?int $folderid = null,
         ?string $path = null,
-        string $mail,
-        int $permissions,
+        ?string $mail = null,
+        ?int $permissions = null,
         ?string $name = null,
         ?string $message = null
     ): array {

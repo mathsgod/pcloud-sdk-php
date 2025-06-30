@@ -23,7 +23,7 @@ trait Thumbnails
     public function getthumblink(
         ?int $fileid = null,
         ?string $path = null,
-        string $size,
+        ?string $size = null,
         bool $crop = false,
         ?string $type = null
     ): array {
@@ -101,7 +101,7 @@ trait Thumbnails
     public function getthumb(
         ?int $fileid = null,
         ?string $path = null,
-        string $size,
+        ?string $size = null,
         bool $crop = false,
         ?string $type = null
     ): string {
@@ -146,7 +146,7 @@ trait Thumbnails
     public function savethumb(
         ?int $fileid = null,
         ?string $path = null,
-        string $size,
+        ?string $size = null,
         ?string $topath = null,
         ?int $tofolderid = null,
         ?string $toname = null,

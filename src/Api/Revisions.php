@@ -48,7 +48,7 @@ trait Revisions
     public function revertrevision(
         ?int $fileid = null,
         ?string $path = null,
-        int $revisionid
+        ?int $revisionid= null
     ): array {
         if (($fileid === null && $path === null) || empty($revisionid)) {
             throw new \InvalidArgumentException("Parameter 'fileid' or 'path' and 'revisionid' are required.");

@@ -24,7 +24,7 @@ trait UploadLinks
     public function createuploadlink(
         ?int $folderid = null,
         ?string $path = null,
-        string $comment,
+        string $comment= '',
         ?string $expire = null,
         ?int $maxspace = null,
         ?int $maxfiles = null
