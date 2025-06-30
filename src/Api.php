@@ -18,8 +18,7 @@ class Api
     use Api\Trash;
     use Api\Collection;
     use Api\Transfer;
-
-
+    use Api\Upload;
 
     private $client;
 
